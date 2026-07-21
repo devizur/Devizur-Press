@@ -45,7 +45,7 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    "w-full rounded-md border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-foreground/40 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow";
+    "w-full rounded-md border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-foreground/40 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -123,7 +123,7 @@ export function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-red-600" role="alert">
+        <p className="text-sm text-red-600 dark:text-red-400" role="alert">
           Please fill in all required fields.
         </p>
       )}

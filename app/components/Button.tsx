@@ -7,9 +7,9 @@ const variants: Record<ButtonVariant, string> = {
     "bg-yellow text-black hover:bg-yellow-hover focus-visible:outline-yellow",
   secondary:
     "bg-transparent text-foreground border border-foreground/20 hover:border-foreground/40 hover:bg-subtle",
-  dark: "bg-black text-white hover:bg-black/85",
+  dark: "bg-foreground text-background hover:bg-foreground/85",
   "outline-light":
-    "bg-transparent text-white border border-white/30 hover:border-white/60 hover:bg-white/5",
+    "bg-transparent text-inverse-fg border border-inverse-fg/30 hover:border-inverse-fg/60 hover:bg-inverse-fg/5",
 };
 
 type ButtonProps = {

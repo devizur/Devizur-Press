@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Analytics } from "./components/Analytics";
+import { ThemeProvider } from "./components/ThemeProvider";
 import { siteConfig } from "./lib/site";
 import "./globals.css";
 
@@ -64,6 +65,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/images/logo-yellow-bg.png",
+    shortcut: "/images/logo-yellow-bg.png",
+    apple: "/images/logo-yellow-bg.png",
+  },
 };
 
 export default function RootLayout({
@@ -72,12 +78,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jakarta.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans text-foreground bg-background">
-        <Analytics />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html
+      lang="en"
+      className={`${jakarta.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("devizur-theme");var d=t==="dark"||(t!=="light"&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark")}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body
+        className="min-h-full flex flex-col font-sans text-foreground bg-background"
+        suppressHydrationWarning
+      >
+        <ThemeProvider>
+          <Analytics />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

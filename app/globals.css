@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
@@ -10,6 +12,26 @@
   --yellow-hover: #ebc200;
   --black: #0a0a0a;
   --white: #ffffff;
+  --surface: #ffffff;
+  --inverse-bg: #0a0a0a;
+  --inverse-fg: #ffffff;
+  --hero-glow: rgba(255, 212, 0, 0.12);
+  --hero-shadow: rgba(0, 0, 0, 0.03);
+  --header-shadow: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --muted: #a3a3a3;
+  --subtle: #141414;
+  --border: #262626;
+  --surface: #141414;
+  --inverse-bg: #000000;
+  --inverse-fg: #fafafa;
+  --hero-glow: rgba(255, 212, 0, 0.08);
+  --hero-shadow: rgba(255, 255, 255, 0.02);
+  --header-shadow: rgba(0, 0, 0, 0.4);
 }
 
 @theme inline {
@@ -22,12 +44,20 @@
   --color-yellow-hover: var(--yellow-hover);
   --color-black: var(--black);
   --color-white: var(--white);
+  --color-surface: var(--surface);
+  --color-inverse-bg: var(--inverse-bg);
+  --color-inverse-fg: var(--inverse-fg);
   --font-sans: var(--font-jakarta);
   --font-display: var(--font-jakarta);
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
@@ -44,4 +74,18 @@ body {
 :focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: 3px;
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(
+      ellipse at 80% 20%,
+      var(--hero-glow),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 10% 90%,
+      var(--hero-shadow),
+      transparent 40%
+    );
 }

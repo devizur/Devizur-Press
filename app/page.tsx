@@ -8,15 +8,12 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(255,212,0,0.12),transparent_50%),radial-gradient(ellipse_at_10%_90%,rgba(0,0,0,0.03),transparent_40%)]"
-          aria-hidden
-        />
+        <div className="pointer-events-none absolute inset-0 hero-gradient" aria-hidden />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+            {/* <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
               {siteConfig.name}
-            </p>
+            </p> */}
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08]">
               {siteConfig.book.title}
             </h1>
@@ -77,7 +74,7 @@ export default function HomePage() {
             {siteConfig.socialProof.map((review) => (
               <blockquote
                 key={review.name}
-                className="flex flex-col border-t-2 border-yellow bg-white px-6 py-8"
+                className="flex flex-col border-t-2 border-yellow bg-surface px-6 py-8"
               >
                 <p className="flex-1 text-[0.95rem] leading-relaxed text-foreground/80">
                   “{review.quote}”
@@ -134,7 +131,10 @@ export default function HomePage() {
       </section>
 
       {/* The Problem */}
-      <section className="bg-black text-white" aria-labelledby="problem-heading">
+      <section
+        className="bg-subtle text-foreground dark:bg-inverse-bg dark:text-inverse-fg"
+        aria-labelledby="problem-heading"
+      >
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <h2
             id="problem-heading"
@@ -146,20 +146,20 @@ export default function HomePage() {
             {siteConfig.problems.map((problem) => (
               <div
                 key={problem}
-                className="border border-white/10 bg-white/[0.03] px-5 py-6"
+                className="border border-border bg-surface px-5 py-6 dark:border-inverse-fg/10 dark:bg-inverse-fg/[0.03]"
               >
                 <span
                   className="mb-3 block h-1 w-8 bg-yellow"
                   aria-hidden
                 />
-                <p className="text-[0.95rem] leading-relaxed text-white/85">
+                <p className="text-[0.95rem] leading-relaxed text-muted dark:text-inverse-fg/85">
                   {problem}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-12 max-w-2xl text-lg font-medium leading-snug text-yellow sm:text-xl">
-            Decision System explains why—and provides a practical framework to
+          <p className="mt-12  text-lg font-medium leading-snug text-foreground dark:text-yellow sm:text-xl">
+            Decision System explains why and provides a practical framework to
             fix it.
           </p>
         </div>
@@ -229,7 +229,7 @@ export default function HomePage() {
               alt="Hafiz Rahman, author of Decision System"
               width={680}
               height={850}
-              className="h-auto w-full object-cover object-top"
+              className="h-auto w-full object-cover object-top rounded-sm"
               sizes="(max-width: 1024px) 90vw, 340px"
               loading="lazy"
             />
@@ -274,14 +274,7 @@ export default function HomePage() {
       <section aria-labelledby="press-heading">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <div className="max-w-2xl">
-            <Image
-              src="/images/logo-yellow-bg.png"
-              alt=""
-              width={72}
-              height={72}
-              className="mb-8 h-14 w-14"
-              aria-hidden
-            />
+         
             <h2
               id="press-heading"
               className="text-2xl font-bold tracking-tight sm:text-3xl"
@@ -314,7 +307,10 @@ export default function HomePage() {
       </section>
 
       {/* Buy Section */}
-      <section className="bg-black text-white" aria-labelledby="buy-heading">
+      <section
+        className="bg-subtle text-foreground dark:bg-inverse-bg dark:text-inverse-fg"
+        aria-labelledby="buy-heading"
+      >
         <div className="mx-auto flex max-w-6xl flex-col items-center px-5 py-20 text-center sm:px-8 sm:py-28">
           <Image
             src="/images/book-3d.png"
@@ -327,12 +323,17 @@ export default function HomePage() {
           />
           <h2
             id="buy-heading"
-            className="max-w-xl text-2xl font-bold tracking-tight sm:text-4xl"
+            className=" text-2xl font-bold tracking-tight sm:text-4xl"
           >
             Ready to start making better decisions?
           </h2>
           <AmazonBuyButtons
-            className="mt-10 justify-center"
+            className="mt-10 justify-center dark:hidden"
+            primaryVariant="primary"
+            secondaryVariant="secondary"
+          />
+          <AmazonBuyButtons
+            className="mt-10 hidden justify-center dark:flex"
             primaryVariant="primary"
             secondaryVariant="outline-light"
           />

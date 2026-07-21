@@ -6,17 +6,24 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-5 py-14 sm:px-8 md:flex-row md:items-start md:justify-between">
+    <footer className="bg-yellow/10 text-foreground dark:bg-subtle">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10  py-14 sm:px-8 md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
           <Image
-            src="/images/logo-yellow.png"
+            src="/images/logo-dark.png"
             alt="Devizur Press"
-            width={140}
-            height={48}
-            className="h-12 w-auto"
+            width={250}
+            height={75}
+            className="h-24 w-auto dark:hidden"
           />
-          <p className="mt-4 text-sm leading-relaxed text-white/60">
+          <Image
+            src="/images/logo-white.png"
+            alt="Devizur Press"
+            width={250}
+            height={75}
+            className="hidden h-24 w-auto dark:block"
+          />
+          <p className="mt-4 text-sm leading-relaxed text-muted">
             Practical books for executives, technology leaders, and data
             professionals.
           </p>
@@ -25,9 +32,9 @@ export function Footer() {
         <div className="flex flex-wrap gap-12 text-sm">
           <div>
             <p className="mb-3 font-semibold tracking-wide text-yellow">Book</p>
-            <ul className="space-y-2 text-white/70">
+            <ul className="space-y-2 text-muted">
               <li>
-                <Link href="/#about" className="hover:text-white">
+                <Link href="/#about" className="hover:text-foreground">
                   {siteConfig.book.title}
                 </Link>
               </li>
@@ -36,7 +43,7 @@ export function Footer() {
                   href={siteConfig.amazon.ebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white"
+                  className="hover:text-foreground"
                 >
                   Buy on Amazon
                 </a>
@@ -47,16 +54,16 @@ export function Footer() {
             <p className="mb-3 font-semibold tracking-wide text-yellow">
               Company
             </p>
-            <ul className="space-y-2 text-white/70">
+            <ul className="space-y-2 text-muted">
               <li>
-                <Link href="/contact" className="hover:text-white">
+                <Link href="/contact" className="hover:text-foreground">
                   Contact
                 </Link>
               </li>
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="hover:text-white"
+                  className="hover:text-foreground"
                 >
                   {siteConfig.email}
                 </a>
@@ -66,8 +73,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl px-5 py-6 text-xs text-white/40 sm:px-8">
+      <div className="border-t border-foreground/10">
+        <div className="mx-auto flex max-w-6xl px-5 py-6 text-xs text-muted sm:px-8">
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>

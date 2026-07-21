@@ -12,7 +12,8 @@ export const siteConfig = {
     ebook: "https://www.amazon.com.au/dp/B0H9NLJ667",
     paperback: "https://www.amazon.com.au/dp/176482170X",
   },
-  sampleChapter: "/sample-chapter",
+  sampleChapter:
+    "https://www.amazon.com.au/dp/B0H9NLJ667?asin=B0H9NLJ667&revisionId=cecc7ac9&format=3&depth=1",
   linkedIn: "https://www.linkedin.com/in/hafizengineering",
   socialProof: [
     {
