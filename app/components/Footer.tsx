@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <footer className="bg-yellow/10 text-foreground dark:bg-subtle">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10  py-14 sm:px-8 md:flex-row md:items-start md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10  py-14 px-4 md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
           <Image
             src="/images/logo-dark.png"
