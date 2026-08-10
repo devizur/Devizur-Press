@@ -18,11 +18,28 @@ export const siteConfig = {
   socialProof: [
     {
       quote:
+        "As a professor of software engineering and Director of an industry-stream, multi-university NSERC CREATE graduate program in Software Analytics Research (SOAR), I regularly engage with senior executives, finance leaders, and managers across industry. Despite major investments in modern software systems, artificial intelligence including AI agents, and trusted data, I often hear the same challenge: organizations still struggle to consistently turn data into better business decisions.  Decision System provides a practical framework for addressing this challenge. It shows how organizations can build trust in data, establish shared ownership of critical business metrics, and make trusted information accessible to both people and AI, enabling better decisions and measurable business outcomes. The book also fills an important gap for today's graduates. They know how to build modern software and AI solutions, but many have yet to learn how those solutions translate into improved decisions, stronger financial performance, and sustainable business growth. Decision System bridges that gap by connecting technical innovation with business value.A valuable resource for business leaders, finance leaders, and the next generation of technology professionals.",
+      name: "Chanchal K. Roy",
+      title: "PhD, Professor, Department of Computer Science",
+      company: "University of Saskatchewan; Director, SOAR and Software Research Lab",
+    },
+    {
+      quote:
         "This book perfectly captures and solves many problems I've encountered with data across multiple organizations I've worked in. A clear system that helps cut through the noise and sanity checks the decision making process. Essential reading for any modern executive.",
       name: "Umut Omer",
       title: "Chief Commercial Officer",
       company: "Stakk",
     },
+    {
+      quote:
+        "As a data-minded marketer, CRM leader, and GTM operator, this is one of the rare books that bridges commercial strategy and technical execution without getting lost in theory. Packed with relatable real-world examples, it gives you a front-row seat into the thinking of a commercially minded technical expert and a practical framework you simply won't find elsewhere. More than just a good read, it's a blueprint for making better decisions, driving growth, and setting yourself up for success in any modern business.",
+
+
+      name: "Tracy Jane Tanti",
+      title: "Head of Marketing Operations and Performance Marketing",
+      company: "Webjet Group",
+    },
+
     {
       quote:
         "A light, fast, and engaging read that argues the real challenge in decision-making is not the lack of data, but the design of the decision system itself. Through a practical five-layer framework, it offers valuable insights for both decision-makers and those building decision system. A must-have non-technical read for every data professional and leader.",

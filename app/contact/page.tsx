@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <section className="  border-border">
-      <div className="mx-auto grid max-w-6xl gap-14 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div className="mx-auto grid container mx-auto px-4  gap-14 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
         <div>
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Contact the Author
