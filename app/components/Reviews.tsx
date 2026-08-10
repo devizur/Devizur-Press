@@ -64,13 +64,14 @@ export default function Reviews({ reviews }: ReviewsProps) {
             key={review.name}
             className="flex flex-col border-t-2 border-yellow bg-surface px-6 py-8"
           >
-            <div className="flex-1 text-[0.95rem] leading-relaxed text-foreground/80">
+            <div className="flex-1 text-[0.95rem] leading-relaxed text-foreground/80 text-justify
+ ">
               {displayedParagraphs.map((paragraph, index) => {
                 const isFirstParagraph = index === 0;
                 const isLastParagraph = index === displayedParagraphs.length - 1;
 
                 return (
-                  <p key={index} className={isFirstParagraph ? undefined : "mt-4"}>
+                  <p key={index} className={isFirstParagraph ? undefined : "mt-4"} >
                     {isFirstParagraph && (
                       <span className="text-3xl font-bold leading-[0] text-yellow">
                         “{" "}
