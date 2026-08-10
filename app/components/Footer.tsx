@@ -7,11 +7,7 @@ export function Footer() {
 
   return (
     <footer className="bg-yellow/10 text-foreground dark:bg-subtle">
-<<<<<<< HEAD
-      <div className="mx-auto flex max-w-6xl flex-col gap-10  py-14 px-4 md:flex-row md:items-start md:justify-between">
-=======
-      <div className="mx-auto flex container mx-auto px-4  flex-col gap-10  py-14 px-4 md:flex-row md:items-start md:justify-between">
->>>>>>> main
+      <div className="  flex container mx-auto px-4  flex-col gap-10  py-14  md:flex-row md:items-start md:justify-between">
         <div className="max-w-xs">
           <Image
             src="/images/logo-dark.png"
@@ -78,11 +74,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-foreground/10">
-<<<<<<< HEAD
-        <div className="mx-auto flex max-w-6xl px-5 py-6 text-xs text-muted sm:px-8">
-=======
-        <div className="mx-auto flex container mx-auto px-4  px-5 py-6 text-xs text-muted sm:px-8">
->>>>>>> main
+        <div className="  flex container mx-auto px-4   py-6 text-xs text-muted sm:px-8">
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>
