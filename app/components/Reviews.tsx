@@ -46,7 +46,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
           .split(/\n\s*\n/)
           .map((paragraph) => paragraph.replace(/\s+/g, " ").trim())
           .filter(Boolean);
-        const count = 95;
+        const count = 100;
         const wordCount = paragraphs.reduce(
           (total, paragraph) => total + paragraph.split(/\s+/).length,
           0,
