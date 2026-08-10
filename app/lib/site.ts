@@ -18,7 +18,10 @@ export const siteConfig = {
   socialProof: [
     {
       quote:
-        "....Despite major investments in modern software systems, artificial intelligence including AI agents, and trusted data, I often hear the same challenge: organizations still struggle to consistently turn data into better business decisions.  Decision System provides a practical framework for addressing this challenge. It shows how organizations can build trust in data, establish shared ownership of critical business metrics, and make trusted information accessible to both people and AI, enabling better decisions and measurable business outcomes. The book also fills an important gap for today's graduates. They know how to build modern software and AI solutions, but many have yet to learn how those solutions translate into improved decisions, stronger financial performance, and sustainable business growth. Decision System bridges that gap by connecting technical innovation with business value.A valuable resource for business leaders, finance leaders, and the next generation of technology professionals.",
+        ".....Despite major investments in modern software systems, artificial intelligence including AI agents, and trusted data, I often hear the same challenge: organizations still struggle to consistently turn data into better business decisions.\n\n" +
+        "Decision System provides a practical framework for addressing this challenge. It shows how organizations can build trust in data, establish shared ownership of critical business metrics, and make trusted information accessible to both people and AI, enabling better decisions and measurable business outcomes.\n\n" +
+        "The book also fills an important gap for today's graduates. They know how to build modern software and AI solutions, but many have yet to learn how those solutions translate into improved decisions, stronger financial performance, and sustainable business growth. Decision System bridges that gap by connecting technical innovation with business value.\n\n" +
+        "A valuable resource for business leaders, finance leaders, and the next generation of technology professionals.",
       name: "Chanchal K. Roy",
       title: "PhD, Professor, Department of Computer Science",
       company: "University of Saskatchewan; Director, SOAR and Software Research Lab",
