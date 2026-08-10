@@ -38,7 +38,11 @@ export function Header() {
           : "bg-background"
       }`}
     >
+<<<<<<< HEAD
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:h-[4.5rem] sm:px-8">
+=======
+      <div className="mx-auto flex h-16 container mx-auto px-4  items-center justify-between px-5 sm:h-[4.5rem] sm:px-8">
+>>>>>>> main
         <Link
           href="/"
           className="flex items-center gap-3"

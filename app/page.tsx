@@ -2,14 +2,25 @@ import Image from "next/image";
 import { Button, AmazonBuyButtons } from "./components/Button";
 import { LearnIcon } from "./components/LearnIcon";
 import { siteConfig } from "./lib/site";
+<<<<<<< HEAD
 
 export default function HomePage() {
+=======
+import Reviews from "./components/Reviews";
+
+export default function HomePage() {
+
+>>>>>>> main
   return (
     <>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border">
         <div className="pointer-events-none absolute inset-0 hero-gradient" aria-hidden />
+<<<<<<< HEAD
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
+=======
+        <div className="relative mx-auto grid container mx-auto px-4  items-center gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
+>>>>>>> main
           <div>
             {/* <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
               {siteConfig.name}
@@ -61,9 +72,15 @@ export default function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Social Proof */}
       <section className="bg-subtle" aria-labelledby="reviews-heading">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+=======
+      {/* Social Proof
+      <section className="bg-subtle" aria-labelledby="reviews-heading">
+        <div className="mx-auto container mx-auto px-4  px-5 py-20 sm:px-8 sm:py-24">
+>>>>>>> main
           <h2
             id="reviews-heading"
             className="text-center text-2xl font-bold tracking-tight sm:text-3xl"
@@ -79,6 +96,11 @@ export default function HomePage() {
                 <p className="flex-1 text-[0.95rem] leading-relaxed text-foreground/80">
                   “{review.quote}”
                 </p>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> main
                 <footer className="mt-8 border-t border-border pt-5">
                   <cite className="not-italic">
                     <span className="block font-semibold text-foreground">
@@ -95,11 +117,21 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+<<<<<<< HEAD
       </section>
 
       {/* What You'll Learn */}
       <section aria-labelledby="learn-heading">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+=======
+      </section> */}
+
+      <Reviews reviews={siteConfig.socialProof} />
+
+      {/* What You'll Learn */}
+      <section aria-labelledby="learn-heading">
+        <div className="mx-auto container mx-auto px-4  px-5 py-20 sm:px-8 sm:py-24">
+>>>>>>> main
           <div className="max-w-2xl">
             <h2
               id="learn-heading"
@@ -135,7 +167,11 @@ export default function HomePage() {
         className="bg-subtle text-foreground dark:bg-inverse-bg dark:text-inverse-fg"
         aria-labelledby="problem-heading"
       >
+<<<<<<< HEAD
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+=======
+        <div className="mx-auto container mx-auto px-4  px-5 py-20 sm:px-8 sm:py-24">
+>>>>>>> main
           <h2
             id="problem-heading"
             className="text-2xl font-bold tracking-tight sm:text-3xl"
@@ -167,7 +203,11 @@ export default function HomePage() {
 
       {/* About the Book */}
       <section id="about" aria-labelledby="about-heading">
+<<<<<<< HEAD
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+=======
+        <div className="mx-auto container mx-auto px-4  px-5 py-20 sm:px-8 sm:py-24">
+>>>>>>> main
           <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <h2
@@ -222,7 +262,11 @@ export default function HomePage() {
 
       {/* Meet the Author */}
       <section className="bg-subtle" aria-labelledby="author-heading">
+<<<<<<< HEAD
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-16">
+=======
+        <div className="mx-auto grid container mx-auto px-4  items-center gap-12 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-16">
+>>>>>>> main
           <div className="relative mx-auto w-full max-w-sm overflow-hidden lg:mx-0">
             <Image
               src="/images/author.png"
@@ -272,9 +316,15 @@ export default function HomePage() {
 
       {/* Devizur Press */}
       <section aria-labelledby="press-heading">
+<<<<<<< HEAD
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <div className="max-w-2xl">
          
+=======
+        <div className="mx-auto container mx-auto px-4  px-5 py-20 sm:px-8 sm:py-24">
+          <div className="max-w-2xl">
+
+>>>>>>> main
             <h2
               id="press-heading"
               className="text-2xl font-bold tracking-tight sm:text-3xl"
@@ -311,7 +361,11 @@ export default function HomePage() {
         className="bg-subtle text-foreground dark:bg-inverse-bg dark:text-inverse-fg"
         aria-labelledby="buy-heading"
       >
+<<<<<<< HEAD
         <div className="mx-auto flex max-w-6xl flex-col items-center px-5 py-20 text-center sm:px-8 sm:py-28">
+=======
+        <div className="mx-auto flex container mx-auto px-4  flex-col items-center px-5 py-20 text-center sm:px-8 sm:py-28">
+>>>>>>> main
           <Image
             src="/images/book-3d.png"
             alt="Decision System book"
