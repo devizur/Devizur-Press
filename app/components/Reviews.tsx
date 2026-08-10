@@ -72,12 +72,14 @@ export default function Reviews({ reviews }: ReviewsProps) {
                 return (
                   <p key={index} className={isFirstParagraph ? undefined : "mt-4"}>
                     {isFirstParagraph && (
-                      <span className="text-3xl font-bold text-yellow">“ </span>
+                      <span className="text-3xl font-bold leading-[0] text-yellow">
+                        “{" "}
+                      </span>
                     )}
                     {paragraph}
                     {isLastParagraph && (
                       <>
-                        <span className="relative top-2 text-3xl font-bold text-yellow">
+                        <span className="relative top-2 text-3xl font-bold leading-[0] text-yellow">
                           ”
                         </span>
 
