@@ -13,7 +13,7 @@ export const siteConfig = {
     paperback: "https://www.amazon.com/dp/176482170X/%20keywords=%20data+driven+decision+making&s=books",
   },
   sampleChapter:
-    "https://www.amazon.com.au/dp/B0H9NLJ667?asin=B0H9NLJ667&revisionId=cecc7ac9&format=3&depth=1",
+    "https://www.amazon.com/dp/B0H9NLJ667?asin=B0H9NLJ667&revisionId=cecc7ac9&format=3&depth=1",
   linkedIn: "https://www.linkedin.com/in/hafizengineering",
   socialProof: [
     {
