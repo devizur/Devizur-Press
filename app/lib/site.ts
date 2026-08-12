@@ -9,8 +9,8 @@ export const siteConfig = {
     author: "Hafiz Rahman",
   },
   amazon: {
-    ebook: "https://www.amazon.com.au/dp/B0H9NLJ667",
-    paperback: "https://www.amazon.com.au/dp/176482170X",
+    ebook: "https://www.amazon.com/dp/B0H9NLJ667/%20keywords=%20data+driven+decision+making&s=books",
+    paperback: "https://www.amazon.com/dp/176482170X/%20keywords=%20data+driven+decision+making&s=books",
   },
   sampleChapter:
     "https://www.amazon.com.au/dp/B0H9NLJ667?asin=B0H9NLJ667&revisionId=cecc7ac9&format=3&depth=1",

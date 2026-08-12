@@ -26,7 +26,7 @@ export default function ContactPage() {
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             Contact the Author
           </h1>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
+          <p className="mt-5 max-w-md text-base leading-relaxed text-muted text-justify">
             If you&apos;ve read Decision System and would like to discuss
             consulting, advisory engagements, executive coaching, speaking
             opportunities, or enterprise workshops, I&apos;d love to hear from

@@ -27,7 +27,7 @@ export default function HomePage() {
                 You are not short of data. You are short of numbers you can
                 trust to decide with.
               </p>
-              <p>
+              <p className="text-justify">
                 Decision System is a practical field guide for leaders who want
                 to turn scattered, contested data into decisions that create
                 measurable business outcomes. Instead of chasing more
@@ -183,19 +183,19 @@ export default function HomePage() {
                 A Field Guide for Data-Driven Leaders
               </h2>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
-                <p className="font-medium text-foreground">
+                <p className="font-medium text-foreground text-justify">
                   You are not short of data.
                   <br />
                   You are short of numbers you can trust to decide with.
                 </p>
-                <p>
+                <p className="text-justify">
                   The dashboards are full, the reports arrive on time, and still
                   the decisions that matter come down to whoever argues hardest
                   in the room. The problem was never a shortage of data. It is
                   that almost none of it has earned the right to drive a
                   decision.
                 </p>
-                <p>
+                <p className="text-justify">
                   Decision System is a practical guide to closing that gap.
                   Across six building blocks—Trust, Coherence, Access,
                   Ownership, Value, and Operating the System—it follows two very
@@ -248,20 +248,20 @@ export default function HomePage() {
               Meet Hafiz Rahman
             </h2>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
-              <p>
+              <p className="text-justify">
                 Hafiz Rahman is a Melbourne-based engineering, data, and AI
                 leader with more than 28 years of experience building trusted
                 systems behind high-growth subscription businesses and consumer
                 brands.
               </p>
-              <p>
+              <p className="text-justify">
                 Having led engineering and data initiatives across fintech
                 platforms and multi-site entertainment businesses, his work
                 focuses on one recurring challenge: helping organisations turn
                 contested data into decisions that directly improve business
                 outcomes.
               </p>
-              <p>
+              <p className="text-justify">
                 Decision System is the first title from Devizur Press and
                 reflects the practical frameworks developed throughout his
                 career working alongside executive leadership teams.
@@ -288,21 +288,21 @@ export default function HomePage() {
               About Devizur Press
             </h2>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
-              <p>
+              <p className="text-justify">
                 Devizur Press publishes practical books for executives,
                 technology leaders, and data professionals.
               </p>
-              <p className="font-medium text-foreground">
+              <p className="font-medium text-foreground text-justify">
                 Our mission is simple:
                 <br />
                 To bridge the gap between technical expertise and better
                 business decisions.
               </p>
-              <p>
+              <p className="text-justify">
                 Every title is designed to be practical, visually polished, and
                 immediately applicable inside modern organisations.
               </p>
-              <p>
+              <p className="text-justify">
                 Upcoming titles will explore topics across data engineering,
                 artificial intelligence, analytics, software architecture,
                 leadership, and digital transformation.
