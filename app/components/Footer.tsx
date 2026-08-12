@@ -31,7 +31,7 @@ export function Footer() {
 
         <div className="flex flex-wrap gap-12 text-sm">
           <div>
-            <p className="mb-3 font-semibold tracking-wide text-yellow">Book</p>
+            <p className="mb-3 font-semibold tracking-wide text-black dark:text-yellow">Book</p>
             <ul className="space-y-2 text-muted">
               <li>
                 <Link href="/#about" className="hover:text-foreground">
@@ -51,7 +51,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="mb-3 font-semibold tracking-wide text-yellow">
+            <p className="mb-3 font-semibold tracking-wide text-black dark:text-yellow">
               Company
             </p>
             <ul className="space-y-2 text-muted">

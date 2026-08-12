@@ -128,13 +128,13 @@ export default function Reviews({ reviews }: ReviewsProps) {
               </div>
             </div>
 
-            <footer className="mt-8 border-t border-border pt-5">
+            <footer className="mt-8 border-t border-border pt-5  h-[76px]">
               <cite className="not-italic">
                 <span className="block font-semibold text-foreground">
                   {review.name}
                 </span>
 
-                <span className="mt-1 block text-sm text-muted">
+                <span className="mt-1 block text-sm text-muted text-justify">
                   {review.title}
                   <br />
                   {review.company}
