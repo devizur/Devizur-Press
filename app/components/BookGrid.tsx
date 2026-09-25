@@ -28,7 +28,7 @@ export function BookGrid({ className = "" }: BookGridProps) {
           {fullStackLife.subtitle}
         </p>
         <div className="mt-8">
-          <Button href="/#full-stack-life">Discover Full Stack Life</Button>
+          <Button href="/full-stack-life">Discover Full Stack Life</Button>
         </div>
       </article>
 

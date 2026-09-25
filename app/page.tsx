@@ -13,10 +13,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const layers = [1, 2, 3, 4, 5];
-// Which layer the diagram highlights as "the one that needs attention".
-const rootLayer = 4;
-
 export default function HomePage() {
   const { author, fullStackLife, sqlBook, flags } = siteConfig;
   const featuredReviews = siteConfig.socialProof.filter((review) =>
@@ -92,25 +88,50 @@ export default function HomePage() {
       {/* 2 — Full Stack Life */}
       <section
         id="full-stack-life"
-        className="bg-inverse-bg text-inverse-fg"
+        className="relative overflow-hidden bg-inverse-bg text-inverse-fg"
         aria-labelledby="fsl-heading"
       >
-        <div className="container mx-auto grid items-center gap-10 px-4 py-16 sm:px-8 sm:py-20 lg:grid-cols-2 lg:gap-16">
+        {/* Subtle grid + glow backdrop */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+            maskImage: "radial-gradient(ellipse at 70% 50%, black 20%, transparent 75%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -right-40 top-1/2 h-[480px] w-[480px] -translate-y-1/2 rounded-full bg-yellow/10 blur-3xl"
+          aria-hidden
+        />
+
+        <div className="relative container mx-auto grid items-center gap-12 px-4 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <div>
-            <p className="inline-block rounded-sm bg-yellow px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-black">
+            <p className="inline-flex items-center gap-2.5 rounded-full border border-yellow/40 bg-yellow/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-yellow">
+              <span className="relative flex h-2 w-2" aria-hidden>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-yellow" />
+              </span>
               Coming Soon
             </p>
             <h2
               id="fsl-heading"
-              className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl"
+              className="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
             >
               {fullStackLife.title}
             </h2>
-            <p className="mt-4 max-w-xl text-lg font-medium leading-snug text-inverse-fg/80 sm:text-xl">
+            <p className="mt-4 max-w-xl text-lg font-medium leading-snug text-inverse-fg/85 sm:text-xl">
               {fullStackLife.subtitle}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="#framework">Discover Full Stack Life</Button>
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-inverse-fg/60">
+              A five-layer framework for diagnosing the hidden systems behind
+              recurring problems—and identifying the layer that actually needs
+              attention.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Button href="/full-stack-life">Discover Full Stack Life</Button>
               {flags.fullStackLifeFreeTools && fullStackLife.freeToolsUrl && (
                 <Button href={fullStackLife.freeToolsUrl} variant="outline-light">
                   Get the Free Tools
@@ -119,14 +140,50 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="border-t border-inverse-fg/10 pt-8 lg:border-l lg:border-t-0 lg:pl-16 lg:pt-0">
-            <div className="space-y-1 text-base leading-relaxed text-inverse-fg/70 sm:text-lg">
-              <p>Most self-improvement starts by asking how to change.</p>
-              <p>{fullStackLife.title} starts one step earlier:</p>
+          <div className="rounded-lg border border-inverse-fg/10 bg-inverse-fg/[0.04] p-6 shadow-2xl backdrop-blur-sm sm:p-8">
+            <div className="rounded-md border border-inverse-fg/10 px-5 py-4">
+              <p className="text-base text-inverse-fg/70 sm:text-lg">
+                Most self-improvement starts by asking how to change.
+              </p>
             </div>
-            <p className="mt-5 border-l-4 border-yellow pl-5 text-2xl font-bold leading-snug text-yellow sm:text-3xl">
-              What if you&apos;re trying to change the wrong thing?
-            </p>
+
+            <div className="flex h-8 items-center pl-5" aria-hidden>
+              <span className="h-full w-px bg-yellow/60" />
+            </div>
+
+            <div className="rounded-md border border-yellow/40 bg-yellow/[0.07] px-5 py-5">
+              <p className="text-sm font-semibold text-yellow">
+                {fullStackLife.title} starts one step earlier:
+              </p>
+              <p className="mt-2 text-2xl font-bold leading-snug text-inverse-fg sm:text-[1.75rem]">
+                What if you&apos;re trying to change the{" "}
+                <span className="text-yellow">wrong thing</span>?
+              </p>
+            </div>
+
+            <a
+              href="#framework"
+              className="group mt-6 flex items-center justify-between gap-4 border-t border-inverse-fg/10 pt-5"
+            >
+              <span className="flex flex-col-reverse gap-0.5" aria-hidden>
+                {fullStackLife.layers.map((layer, index) => (
+                  <span
+                    key={layer}
+                    className={`h-1 rounded-sm ${index === 0 ? "bg-yellow" : "bg-inverse-fg/25"}`}
+                    style={{ width: `${28 - index * 4}px` }}
+                  />
+                ))}
+              </span>
+              <span className="flex-1 text-sm font-medium text-inverse-fg/70 transition-colors group-hover:text-inverse-fg">
+                The five-layer framework
+              </span>
+              <span
+                className="text-yellow transition-transform group-hover:translate-x-1"
+                aria-hidden
+              >
+                →
+              </span>
+            </a>
           </div>
         </div>
       </section>
@@ -137,8 +194,8 @@ export default function HomePage() {
         className="scroll-mt-16 border-b border-border"
         aria-labelledby="framework-heading"
       >
-        <div className="container mx-auto grid items-center gap-14 px-4 py-20 sm:px-8 sm:py-24 lg:grid-cols-2 lg:gap-20">
-          <div>
+        <div className="container mx-auto px-4 py-16 sm:px-8 sm:py-20">
+          <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
               The Full Stack Life Framework
             </p>
@@ -146,57 +203,66 @@ export default function HomePage() {
               id="framework-heading"
               className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
             >
-              Five layers. One real problem.
+              Diagnose from the foundation upward
             </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted sm:text-[1.05rem]">
-              <p>
-                Recurring problems are rarely random. They are produced by
-                hidden systems—and the place a problem shows up is often not
-                the place it starts.
-              </p>
-              <p>
-                The five-layer framework is a way of diagnosing those hidden
-                systems: tracing a recurring problem down through the stack
-                and identifying the layer that actually needs attention, before
-                you spend effort fixing the wrong one.
-              </p>
-            </div>
+            <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
+              Problems often appear higher in the stack than where they
+              originate. {fullStackLife.title} teaches you to diagnose from the
+              foundation upward.
+            </p>
           </div>
 
-          <div
-            className="mx-auto w-full max-w-md"
-            role="img"
-            aria-label="A five-layer stack. The problem shows up at the top layer, but the layer that needs attention is further down."
+          <ol
+            className="mt-12 flex flex-col items-stretch gap-2 lg:flex-row lg:items-center"
+            aria-label={`The five layers: ${fullStackLife.layers.join(", ")}`}
           >
-            <div className="space-y-2.5">
-              {layers.map((layer) => {
-                const isSymptom = layer === 1;
-                const isRoot = layer === rootLayer;
-                return (
+            {fullStackLife.layers.map((layer, index) => {
+              const isFoundation = index === 0;
+              const isSurface = index === fullStackLife.layers.length - 1;
+              return (
+                <li key={layer} className="contents">
+                  {index > 0 && (
+                    <span
+                      className="flex justify-center text-lg font-bold text-yellow lg:px-1"
+                      aria-hidden
+                    >
+                      <span className="rotate-90 lg:rotate-0">→</span>
+                    </span>
+                  )}
                   <div
-                    key={layer}
-                    className={`flex items-center justify-between rounded-md border px-5 py-4 text-sm font-semibold transition-colors ${
-                      isRoot
+                    className={`relative flex flex-1 items-center justify-between gap-4 rounded-md border px-5 py-5 lg:flex-col lg:items-start lg:justify-start lg:py-6 ${
+                      isFoundation
                         ? "border-yellow bg-yellow text-black shadow-lg"
-                        : "border-border bg-subtle text-muted"
+                        : "border-border bg-subtle text-foreground"
                     }`}
-                    style={{ marginInline: `${(layer - 1) * 4}%` }}
                   >
-                    <span>Layer {layer}</span>
-                    {isSymptom && (
-                      <span className="text-xs font-medium">
-                        Where it shows up
-                      </span>
-                    )}
-                    {isRoot && (
-                      <span className="text-xs font-bold">
-                        What needs attention
+                    <span
+                      className={`text-xs font-bold ${isFoundation ? "text-black/60" : "text-muted"}`}
+                    >
+                      0{index + 1}
+                    </span>
+                    <span className="text-base font-extrabold uppercase tracking-[0.12em] lg:mt-3 lg:text-lg">
+                      {layer}
+                    </span>
+                    {(isFoundation || isSurface) && (
+                      <span
+                        className={`text-[0.65rem] font-semibold uppercase tracking-[0.15em] lg:mt-2 ${
+                          isFoundation ? "text-black/70" : "text-muted"
+                        }`}
+                      >
+                        {isFoundation ? "Start here" : "Where it shows up"}
                       </span>
                     )}
                   </div>
-                );
-              })}
-            </div>
+                </li>
+              );
+            })}
+          </ol>
+
+          <div className="mt-10 text-center">
+            <Button href="/full-stack-life" variant="secondary">
+              Explore the Framework
+            </Button>
           </div>
         </div>
       </section>

@@ -34,7 +34,7 @@ export function Footer() {
             <p className="mb-3 font-semibold tracking-wide text-black dark:text-yellow">Books</p>
             <ul className="space-y-2 text-muted">
               <li>
-                <Link href="/#full-stack-life" className="hover:text-foreground">
+                <Link href="/full-stack-life" className="hover:text-foreground">
                   {siteConfig.fullStackLife.title}
                 </Link>
               </li>

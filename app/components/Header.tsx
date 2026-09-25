@@ -15,7 +15,7 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
-  { href: "/books", label: "Books", match: ["/decision-system"] },
+  { href: "/books", label: "Books", match: ["/decision-system", "/full-stack-life"] },
   { href: "/about", label: "About" },
   { href: "/ideas", label: "Ideas" },
   { href: "/resources", label: "Resources" },

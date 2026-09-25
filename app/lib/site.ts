@@ -39,6 +39,8 @@ export const siteConfig = {
   fullStackLife: {
     title: "Full Stack Life",
     subtitle: "How to Find the Real Problem Before You Fix the Wrong One",
+    // Foundation first: problems surface near UX but often originate lower.
+    layers: ["Infrastructure", "Data", "Backend", "Frontend", "UX"],
     freeToolsUrl: "",
   },
   sqlBook: {
