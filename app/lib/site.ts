@@ -41,6 +41,13 @@ export const siteConfig = {
     subtitle: "How to Find the Real Problem Before You Fix the Wrong One",
     // Foundation first: problems surface near UX but often originate lower.
     layers: ["Infrastructure", "Data", "Backend", "Frontend", "UX"],
+    layerDescriptions: {
+      Infrastructure: "Your body.",
+      Data: "What you let in.",
+      Backend: "The logic running unattended.",
+      Frontend: "What other people experience.",
+      UX: "Does it feel good to use your own life?",
+    } as Record<string, string>,
     freeToolsUrl: "",
   },
   sqlBook: {

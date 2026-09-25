@@ -259,6 +259,58 @@ export default function HomePage() {
               originate. {fullStackLife.title} teaches you to diagnose from the
               foundation upward.
             </p>
+
+            <div className="mt-10 max-w-lg">
+            <div className="relative">
+              {/* Diagnose-upward rail through the number badges */}
+              <span
+                className="pointer-events-none absolute bottom-11 left-[10px] top-2 w-1 rounded-full bg-gradient-to-t from-yellow via-yellow to-yellow/50"
+                aria-hidden
+              />
+              <svg
+                viewBox="0 0 12 8"
+                className="pointer-events-none absolute -top-3 left-[4px] h-3 w-4 text-yellow"
+                fill="currentColor"
+                aria-hidden
+              >
+                <path d="M6 0l6 8H0z" />
+              </svg>
+            <ol className="relative divide-y divide-border border-y border-border">
+              {[...fullStackLife.layers].reverse().map((layer, i, arr) => {
+                const number = arr.length - i;
+                const isFoundation = number === 1;
+                return (
+                  <li key={layer} className="flex gap-4 py-3.5">
+                    <span
+                      className={`relative mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[0.65rem] font-bold tabular-nums ${
+                        isFoundation
+                          ? "bg-yellow text-black ring-4 ring-yellow/25"
+                          : "border border-border bg-background text-muted"
+                      }`}
+                    >
+                      0{number}
+                    </span>
+                    <div>
+                      <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-foreground">
+                        {layer}
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-muted">
+                        {fullStackLife.layerDescriptions[layer]}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+            </div>
+              <p className="mt-4 flex items-center gap-2 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted">
+                <span className="text-sm leading-none text-yellow" aria-hidden>
+                  ▲
+                </span>
+                Diagnose from the foundation upward
+              </p>
+            </div>
+
             <div className="mt-10">
               <Button href="/full-stack-life" variant="dark">
                 Explore the Framework
@@ -295,14 +347,14 @@ export default function HomePage() {
                       style={{ maxWidth: `${100 - depth * 10}%` }}
                     >
                       <div
-                        className={`relative flex items-center justify-center rounded-lg px-4 py-3.5 text-center sm:py-4 ${
+                        className={`relative flex flex-col items-center justify-center rounded-lg px-4 py-3 text-center sm:px-11 sm:py-3.5 ${
                           isFoundation
                             ? "bg-yellow text-black shadow-[0_6px_0_0_var(--yellow-hover),0_18px_36px_-12px_var(--yellow)]"
                             : "border border-border bg-surface text-foreground shadow-[0_5px_0_0_var(--border)]"
                         }`}
                       >
                         <span
-                          className={`absolute left-4 hidden text-[0.65rem] font-bold tabular-nums sm:inline ${
+                          className={`absolute left-4 top-1/2 hidden -translate-y-1/2 text-[0.65rem] font-bold tabular-nums sm:inline ${
                             isFoundation ? "text-black/50" : "text-muted"
                           }`}
                         >
@@ -310,6 +362,13 @@ export default function HomePage() {
                         </span>
                         <span className="text-xs font-extrabold uppercase tracking-[0.12em] min-[400px]:text-sm sm:text-base sm:tracking-[0.16em]">
                           {layer}
+                        </span>
+                        <span
+                          className={`mt-0.5 text-[0.7rem] leading-snug sm:text-xs ${
+                            isFoundation ? "text-black/70" : "text-muted"
+                          }`}
+                        >
+                          {fullStackLife.layerDescriptions[layer]}
                         </span>
                       </div>
                     </li>
