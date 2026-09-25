@@ -21,12 +21,66 @@ export default function HomePage() {
     ),
   );
 
+  const highlight =
+    "bg-[linear-gradient(transparent_62%,var(--yellow)_62%)] dark:bg-none dark:text-yellow";
+  const positioning = (
+    <>
+      Systems thinking for <span className={highlight}>better decisions</span>,{" "}
+      <span className={highlight}>better organizations</span>, and{" "}
+      <span className={highlight}>better lives</span>.
+    </>
+  );
+
   return (
     <>
       {/* 1 — Hafiz Rahman */}
       <section className="relative overflow-hidden border-b border-border">
         <div className="pointer-events-none absolute inset-0 hero-gradient" aria-hidden />
-        <div className="relative container mx-auto grid items-center gap-12 px-4 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-20 lg:py-14">
+                {/* Mobile & tablet */}
+        <div className="relative container mx-auto px-4 pb-10 pt-5 sm:px-8 sm:pb-14 sm:pt-10 lg:hidden">
+          <div className="sm:mx-auto sm:max-w-xl">
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+            <Image
+              src="/images/author.png"
+              alt="Hafiz Rahman"
+              width={680}
+              height={850}
+              priority
+              className="aspect-[4/5] w-full object-cover object-top sm:aspect-square sm:object-center"
+              sizes="(max-width: 1024px) 100vw, 1px"
+            />
+            <div
+              className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-black/90 via-black/55 to-transparent"
+              aria-hidden
+            />
+            <span className="absolute left-0 top-6 h-10 w-1 bg-yellow" aria-hidden />
+            <div className="absolute inset-x-0 bottom-0 p-5 sm:p-8">
+              <h1 className="text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-white min-[400px]:text-5xl">
+                {author.name}
+              </h1>
+              <p className="mt-3 flex items-start gap-2.5 text-[0.7rem] font-semibold uppercase leading-relaxed tracking-[0.18em] text-white/80 sm:text-sm">
+                <span className="mt-[0.55em] h-0.5 w-6 shrink-0 bg-yellow" aria-hidden />
+                {author.roles.join(" · ")}
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-8 text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
+            {positioning}
+          </p>
+          <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+            <Button href="/books" className="w-full !px-3 sm:w-auto sm:!px-6">
+              Explore the Books
+            </Button>
+            <Button href="/about" variant="secondary" className="w-full !px-3 sm:w-auto sm:!px-6">
+              About Hafiz
+            </Button>
+          </div>
+          </div>
+        </div>
+
+        {/* Desktop */}
+        <div className="relative container mx-auto hidden items-center gap-12 px-4 py-10 sm:px-8 sm:py-12 lg:grid lg:grid-cols-[1fr_minmax(0,440px)] lg:gap-20 lg:py-14">
           <div>
             <h1 className="text-5xl font-extrabold uppercase tracking-tight text-foreground sm:text-6xl lg:text-7xl lg:leading-[1.02]">
               {author.name}
@@ -36,19 +90,7 @@ export default function HomePage() {
               {author.roles.join(" · ")}
             </p>
             <p className="mt-8 max-w-2xl text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
-              Systems thinking for{" "}
-              <span className="bg-[linear-gradient(transparent_62%,var(--yellow)_62%)] dark:bg-none dark:text-yellow">
-                better decisions
-              </span>
-              ,{" "}
-              <span className="bg-[linear-gradient(transparent_62%,var(--yellow)_62%)] dark:bg-none dark:text-yellow">
-                better organizations
-              </span>
-              , and{" "}
-              <span className="bg-[linear-gradient(transparent_62%,var(--yellow)_62%)] dark:bg-none dark:text-yellow">
-                better lives
-              </span>
-              .
+              {positioning}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/books">Explore the Books</Button>
@@ -75,7 +117,7 @@ export default function HomePage() {
                 height={850}
                 priority
                 className="relative h-auto w-full rounded-sm object-cover object-top shadow-2xl"
-                sizes="(max-width: 1024px) 90vw, 440px"
+                sizes="(max-width: 1024px) 1px, 440px"
               />
 
             </div>

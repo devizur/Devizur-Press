@@ -40,7 +40,7 @@ export function BookGrid({ className = "" }: BookGridProps) {
             alt={`${book.title} book by ${author.name}`}
             width={900}
             height={1100}
-            className="h-full w-auto drop-shadow-xl"
+            className="h-full w-full object-contain drop-shadow-xl"
             sizes="240px"
           />
         </div>
@@ -61,7 +61,7 @@ export function BookGrid({ className = "" }: BookGridProps) {
             alt={`${sqlBook.title} book cover`}
             width={298}
             height={385}
-            className="h-full w-auto rounded-r-sm shadow-xl"
+            className="h-full w-auto max-w-full rounded-r-sm object-contain shadow-xl"
             sizes="200px"
           />
         </div>
