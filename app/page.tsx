@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-0 hero-gradient" aria-hidden />
                 {/* Mobile & tablet */}
         <div className="relative container mx-auto px-4 pb-10 pt-5 sm:px-8 sm:pb-14 sm:pt-10 lg:hidden">
-          <div className="sm:mx-auto sm:max-w-xl">
+          <div className="sm:mx-auto sm:max-w-md">
           <div className="relative overflow-hidden rounded-2xl shadow-2xl">
             <Image
               src="/images/author.png"
@@ -46,7 +46,7 @@ export default function HomePage() {
               width={680}
               height={850}
               priority
-              className="aspect-[4/5] w-full object-cover object-top sm:aspect-square sm:object-center"
+              className="aspect-[4/5] w-full object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 1px"
             />
             <div
@@ -382,9 +382,9 @@ export default function HomePage() {
       {/* 5 — Solving Business Problems Using SQL */}
       <section aria-labelledby="sql-heading">
         <div className="container mx-auto px-4 py-16 sm:px-8 sm:py-20">
-          <div className="flex items-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-muted sm:gap-4 sm:text-xs sm:tracking-[0.2em]">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-muted sm:gap-4 sm:text-xs sm:tracking-[0.2em]">
             <span className="whitespace-nowrap">Where it started</span>
-            <span className="h-px min-w-4 flex-1 bg-border" aria-hidden />
+            <span className="hidden h-px min-w-4 flex-1 bg-border min-[400px]:block" aria-hidden />
             <span className="whitespace-nowrap text-foreground">
               Publishing since {sqlBook.year}
             </span>

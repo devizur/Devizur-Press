@@ -70,7 +70,7 @@ export function Footer() {
                 <ul className="mt-5 space-y-3 text-sm">
                   {column.links.map((link) => {
                     const className =
-                      "text-foreground/75 transition-colors hover:text-foreground dark:hover:text-yellow";
+                      "break-words text-foreground/75 transition-colors [overflow-wrap:anywhere] hover:text-foreground dark:hover:text-yellow";
                     return (
                       <li key={link.href}>
                         {link.external ? (
@@ -102,7 +102,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container mx-auto flex flex-col gap-4 px-4 py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>
-            © {year} {siteConfig.author.name}. All rights reserved.
+            © {year} {siteConfig.name}. All rights reserved.
           </p>
         </div>
       </div>

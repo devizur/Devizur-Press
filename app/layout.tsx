@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Analytics } from "./components/Analytics";
+import { BackToTop } from "./components/BackToTop";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { siteConfig } from "./lib/site";
 import "./globals.css";
@@ -99,6 +100,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>
