@@ -261,42 +261,6 @@ export default function DecisionSystemPage() {
         </div>
       </section>
 
-      {/* Devizur Press */}
-      <section aria-labelledby="press-heading">
-        <div className="mx-auto container   px-4    py-20 sm:px-8 sm:py-24">
-          <div className="max-w-2xl">
-
-            <h2
-              id="press-heading"
-              className="text-2xl font-bold tracking-tight sm:text-3xl"
-            >
-              About Devizur Press
-            </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
-              <p className="text-justify">
-                Devizur Press publishes practical books for executives,
-                technology leaders, and data professionals.
-              </p>
-              <p className="font-medium text-foreground text-justify">
-                Our mission is simple:
-                <br />
-                To bridge the gap between technical expertise and better
-                business decisions.
-              </p>
-              <p className="text-justify">
-                Every title is designed to be practical, visually polished, and
-                immediately applicable inside modern organisations.
-              </p>
-              <p className="text-justify">
-                Upcoming titles will explore topics across data engineering,
-                artificial intelligence, analytics, software architecture,
-                leadership, and digital transformation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Buy Section */}
       <section
         className="bg-subtle text-foreground dark:bg-inverse-bg dark:text-inverse-fg"

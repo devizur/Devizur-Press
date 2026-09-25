@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Devizur Press",
   url: "https://devizur.com",
-  email: "contact@devizur.com",
+  email: "hafiz@devizurpress.com",
   book: {
     title: "Decision System",
     subtitle:
