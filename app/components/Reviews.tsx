@@ -86,7 +86,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
   const [expandedReview, setExpandedReview] = useState<string | null>(null);
 
   return (
-    <div className="container mx-auto mt-12 grid gap-6 px-4 md:grid-cols-3">
+    <div className="container mx-auto mt-12 grid gap-6 px-4 sm:px-8 md:grid-cols-2 lg:grid-cols-3 md:[&>blockquote:last-child:nth-child(odd)]:col-span-2 lg:[&>blockquote:last-child:nth-child(odd)]:col-span-1">
       {reviews.map((review) => {
         const paragraphs = (review.quote ?? "")
           .trim()
@@ -111,7 +111,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
             key={review.name}
             className="flex flex-col border-t-2 border-yellow bg-surface px-6 py-8"
           >
-            <div className="flex-1 text-justify text-[0.95rem] leading-relaxed text-foreground/80">
+            <div className="flex-1 text-left text-[0.95rem] lg:text-justify leading-relaxed text-foreground/80">
               <div className="md:hidden">
                 <QuoteText paragraphs={paragraphs} />
               </div>
@@ -128,13 +128,13 @@ export default function Reviews({ reviews }: ReviewsProps) {
               </div>
             </div>
 
-            <footer className="mt-8 border-t border-border pt-5  h-[76px]">
+            <footer className="mt-8 min-h-[76px] border-t border-border pt-5">
               <cite className="not-italic">
                 <span className="block font-semibold text-foreground">
                   {review.name}
                 </span>
 
-                <span className="mt-1 block text-sm text-muted text-justify">
+                <span className="mt-1 block text-sm text-muted">
                   {review.title}
                   <br />
                   {review.company}

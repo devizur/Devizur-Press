@@ -40,7 +40,7 @@ export function Footer() {
     <footer className="border-t border-border bg-subtle text-foreground">
       <div className="container mx-auto px-4 sm:px-8">
         <div className="grid gap-12 py-14 md:grid-cols-[auto_1fr] md:gap-20">
-          <Link href="/" aria-label={`${siteConfig.name} home`} className="inline-block self-start p-4 sm:p-5">
+          <Link href="/" aria-label={`${siteConfig.name} home`} className="inline-block self-start py-4 sm:p-5">
             <Image
               src="/images/logo-dark.png"
               alt={siteConfig.name}
@@ -58,9 +58,12 @@ export function Footer() {
           </Link>
 
           {/* Link columns */}
-          <div className="grid gap-10 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
             {columns.map((column) => (
-              <div key={column.title}>
+              <div
+                key={column.title}
+                className={column.title === "Books" ? "col-span-2 sm:col-span-1" : undefined}
+              >
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
                   {column.title}
                 </p>

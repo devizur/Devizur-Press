@@ -250,7 +250,7 @@ export default function HomePage() {
                     <li
                       key={layer}
                       className="mx-auto w-full"
-                      style={{ maxWidth: `${60 + depth * 10}%` }}
+                      style={{ maxWidth: `${100 - depth * 10}%` }}
                     >
                       <div
                         className={`relative flex items-center justify-center rounded-lg px-4 py-3.5 text-center sm:py-4 ${
@@ -260,13 +260,13 @@ export default function HomePage() {
                         }`}
                       >
                         <span
-                          className={`absolute left-4 text-[0.65rem] font-bold tabular-nums ${
+                          className={`absolute left-4 hidden text-[0.65rem] font-bold tabular-nums sm:inline ${
                             isFoundation ? "text-black/50" : "text-muted"
                           }`}
                         >
                           0{depth + 1}
                         </span>
-                        <span className="text-sm font-extrabold uppercase tracking-[0.16em] sm:text-base">
+                        <span className="text-xs font-extrabold uppercase tracking-[0.12em] min-[400px]:text-sm sm:text-base sm:tracking-[0.16em]">
                           {layer}
                         </span>
                       </div>
@@ -285,10 +285,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            <figcaption className="relative mt-10 flex items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted">
-              <span className="h-px w-8 bg-border" aria-hidden />
+            <figcaption className="relative mt-10 flex items-center justify-center gap-3 text-center text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted">
+              <span className="hidden h-px w-8 bg-border sm:block" aria-hidden />
               Diagnose from the foundation upward
-              <span className="h-px w-8 bg-border" aria-hidden />
+              <span className="hidden h-px w-8 bg-border sm:block" aria-hidden />
             </figcaption>
           </figure>
         </div>
@@ -340,10 +340,12 @@ export default function HomePage() {
       {/* 5 — Solving Business Problems Using SQL */}
       <section aria-labelledby="sql-heading">
         <div className="container mx-auto px-4 py-16 sm:px-8 sm:py-20">
-          <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-            <span>Where it started</span>
-            <span className="h-px flex-1 bg-border" aria-hidden />
-            <span className="text-foreground">Publishing since {sqlBook.year}</span>
+          <div className="flex items-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-muted sm:gap-4 sm:text-xs sm:tracking-[0.2em]">
+            <span className="whitespace-nowrap">Where it started</span>
+            <span className="h-px min-w-4 flex-1 bg-border" aria-hidden />
+            <span className="whitespace-nowrap text-foreground">
+              Publishing since {sqlBook.year}
+            </span>
           </div>
 
           <div className="mt-10 grid items-center gap-10 md:grid-cols-[minmax(0,360px)_1fr] lg:grid-cols-[minmax(0,440px)_1fr] lg:gap-16">
