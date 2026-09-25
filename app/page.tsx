@@ -226,7 +226,7 @@ export default function HomePage() {
 
           {/* Visual signature: the stack */}
           <figure
-            className="relative overflow-hidden rounded-xl border border-border bg-gradient-to-b from-subtle to-background px-6 py-10 sm:px-12 sm:py-12"
+            className="relative overflow-hidden rounded-xl border border-border bg-subtle px-6 py-10 sm:px-12 sm:py-12"
             aria-label={`The Full Stack Life stack, from the top: ${[...fullStackLife.layers].reverse().join(", ")}. Diagnosis starts at the foundation.`}
           >
             <div
@@ -238,10 +238,6 @@ export default function HomePage() {
                 maskImage:
                   "radial-gradient(ellipse at center, black 30%, transparent 80%)",
               }}
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute -bottom-24 left-1/2 h-56 w-3/4 -translate-x-1/2 rounded-full bg-yellow/25 blur-3xl"
               aria-hidden
             />
 
