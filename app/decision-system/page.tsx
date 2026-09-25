@@ -234,52 +234,29 @@ export default function DecisionSystemPage() {
         </div>
       </section>
 
-      {/* Meet the Author */}
+      {/* About the Author */}
       <section className="bg-subtle" aria-labelledby="author-heading">
-        <div className="mx-auto grid container  px-4  items-center gap-12 py-20 sm:px-8 sm:py-24 lg:grid-cols-[minmax(0,340px)_1fr] lg:gap-16">
-          <div className="relative mx-auto w-full max-w-sm overflow-hidden lg:mx-0">
-            <Image
-              src="/images/author.png"
-              alt="Hafiz Rahman, author of Decision System"
-              width={680}
-              height={850}
-              className="h-auto w-full object-cover object-top rounded-sm"
-              sizes="(max-width: 1024px) 90vw, 340px"
-              loading="lazy"
-            />
-          </div>
-          <div>
+        <div className="container mx-auto flex flex-col gap-6 px-4 py-14 sm:px-8 sm:py-16 md:flex-row md:items-center md:justify-between md:gap-12">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+              About the author
+            </p>
             <h2
               id="author-heading"
-              className="text-2xl font-bold tracking-tight sm:text-3xl"
+              className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl"
             >
-              Meet Hafiz Rahman
+              {siteConfig.author.name}
             </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted">
-              <p className="text-justify">
-                Hafiz Rahman is a Melbourne-based engineering, data, and AI
-                leader with more than 28 years of experience building trusted
-                systems behind high-growth subscription businesses and consumer
-                brands.
-              </p>
-              <p className="text-justify">
-                Having led engineering and data initiatives across fintech
-                platforms and multi-site entertainment businesses, his work
-                focuses on one recurring challenge: helping organisations turn
-                contested data into decisions that directly improve business
-                outcomes.
-              </p>
-              <p className="text-justify">
-                Decision System is the first title from Devizur Press and
-                reflects the practical frameworks developed throughout his
-                career working alongside executive leadership teams.
-              </p>
-            </div>
-            <div className="mt-8">
-              <Button href="/contact" variant="dark">
-                Contact Hafiz
-              </Button>
-            </div>
+            <p className="mt-3 text-base leading-relaxed text-muted">
+              Author, technology executive and entrepreneur with 28+ years of
+              experience across engineering, data, AI and organizational
+              transformation.
+            </p>
+          </div>
+          <div className="shrink-0">
+            <Button href="/about" variant="dark">
+              Read Hafiz&apos;s Story →
+            </Button>
           </div>
         </div>
       </section>

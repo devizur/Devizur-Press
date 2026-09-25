@@ -194,76 +194,107 @@ export default function HomePage() {
         className="scroll-mt-16 border-b border-border"
         aria-labelledby="framework-heading"
       >
-        <div className="container mx-auto px-4 py-16 sm:px-8 sm:py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+        <div className="container mx-auto grid items-center gap-12 px-4 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+          <div>
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+              <span className="h-0.5 w-8 bg-yellow" aria-hidden />
               The Full Stack Life Framework
             </p>
             <h2
               id="framework-heading"
-              className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl"
+              className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl lg:leading-[1.1]"
             >
-              Diagnose from the foundation upward
+              Five layers.
+              <br />
+              Diagnosed from the{" "}
+              <span className="bg-[linear-gradient(transparent_62%,var(--yellow)_62%)] dark:bg-none dark:text-yellow">
+                foundation
+              </span>{" "}
+              up.
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
               Problems often appear higher in the stack than where they
               originate. {fullStackLife.title} teaches you to diagnose from the
               foundation upward.
             </p>
+            <div className="mt-10">
+              <Button href="/full-stack-life" variant="dark">
+                Explore the Framework
+              </Button>
+            </div>
           </div>
 
-          <ol
-            className="mt-12 flex flex-col items-stretch gap-2 lg:flex-row lg:items-center"
-            aria-label={`The five layers: ${fullStackLife.layers.join(", ")}`}
+          {/* Visual signature: the stack */}
+          <figure
+            className="relative overflow-hidden rounded-xl border border-border bg-gradient-to-b from-subtle to-background px-6 py-10 sm:px-12 sm:py-12"
+            aria-label={`The Full Stack Life stack, from the top: ${[...fullStackLife.layers].reverse().join(", ")}. Diagnosis starts at the foundation.`}
           >
-            {fullStackLife.layers.map((layer, index) => {
-              const isFoundation = index === 0;
-              const isSurface = index === fullStackLife.layers.length - 1;
-              return (
-                <li key={layer} className="contents">
-                  {index > 0 && (
-                    <span
-                      className="flex justify-center text-lg font-bold text-yellow lg:px-1"
-                      aria-hidden
+            <div
+              className="pointer-events-none absolute inset-0 opacity-40 dark:opacity-20"
+              style={{
+                backgroundImage:
+                  "radial-gradient(var(--border) 1.2px, transparent 1.2px)",
+                backgroundSize: "20px 20px",
+                maskImage:
+                  "radial-gradient(ellipse at center, black 30%, transparent 80%)",
+              }}
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute -bottom-24 left-1/2 h-56 w-3/4 -translate-x-1/2 rounded-full bg-yellow/25 blur-3xl"
+              aria-hidden
+            />
+
+            <div className="relative flex items-stretch gap-5 sm:gap-8">
+              <ol className="flex flex-1 flex-col gap-3.5">
+                {[...fullStackLife.layers].reverse().map((layer, i, arr) => {
+                  const depth = arr.length - 1 - i; // 0 = foundation
+                  const isFoundation = depth === 0;
+                  return (
+                    <li
+                      key={layer}
+                      className="mx-auto w-full"
+                      style={{ maxWidth: `${60 + depth * 10}%` }}
                     >
-                      <span className="rotate-90 lg:rotate-0">→</span>
-                    </span>
-                  )}
-                  <div
-                    className={`relative flex flex-1 items-center justify-between gap-4 rounded-md border px-5 py-5 lg:flex-col lg:items-start lg:justify-start lg:py-6 ${
-                      isFoundation
-                        ? "border-yellow bg-yellow text-black shadow-lg"
-                        : "border-border bg-subtle text-foreground"
-                    }`}
-                  >
-                    <span
-                      className={`text-xs font-bold ${isFoundation ? "text-black/60" : "text-muted"}`}
-                    >
-                      0{index + 1}
-                    </span>
-                    <span className="text-base font-extrabold uppercase tracking-[0.12em] lg:mt-3 lg:text-lg">
-                      {layer}
-                    </span>
-                    {(isFoundation || isSurface) && (
-                      <span
-                        className={`text-[0.65rem] font-semibold uppercase tracking-[0.15em] lg:mt-2 ${
-                          isFoundation ? "text-black/70" : "text-muted"
+                      <div
+                        className={`relative flex items-center justify-center rounded-lg px-4 py-3.5 text-center sm:py-4 ${
+                          isFoundation
+                            ? "bg-yellow text-black shadow-[0_6px_0_0_var(--yellow-hover),0_18px_36px_-12px_var(--yellow)]"
+                            : "border border-border bg-surface text-foreground shadow-[0_5px_0_0_var(--border)]"
                         }`}
                       >
-                        {isFoundation ? "Start here" : "Where it shows up"}
-                      </span>
-                    )}
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
+                        <span
+                          className={`absolute left-4 text-[0.65rem] font-bold tabular-nums ${
+                            isFoundation ? "text-black/50" : "text-muted"
+                          }`}
+                        >
+                          0{depth + 1}
+                        </span>
+                        <span className="text-sm font-extrabold uppercase tracking-[0.16em] sm:text-base">
+                          {layer}
+                        </span>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
 
-          <div className="mt-10 text-center">
-            <Button href="/full-stack-life" variant="secondary">
-              Explore the Framework
-            </Button>
-          </div>
+              {/* Diagnose-upward rail */}
+              <div className="flex w-6 flex-col items-center" aria-hidden>
+                <svg viewBox="0 0 12 8" className="h-2.5 w-3 text-yellow" fill="currentColor">
+                  <path d="M6 0l6 8H0z" />
+                </svg>
+                <span className="w-px flex-1 bg-gradient-to-t from-yellow to-yellow/0" />
+                <span className="h-3 w-3 rounded-full bg-yellow ring-4 ring-yellow/25" />
+              </div>
+            </div>
+
+            <figcaption className="relative mt-10 flex items-center justify-center gap-3 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted">
+              <span className="h-px w-8 bg-border" aria-hidden />
+              Diagnose from the foundation upward
+              <span className="h-px w-8 bg-border" aria-hidden />
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -313,64 +344,80 @@ export default function HomePage() {
       {/* 5 — Solving Business Problems Using SQL */}
       <section aria-labelledby="sql-heading">
         <div className="container mx-auto px-4 py-16 sm:px-8 sm:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">
-            Where it started
-          </p>
-          <div className="mt-6 grid gap-8 rounded-md border border-border bg-surface p-6 sm:grid-cols-[220px_1fr] sm:gap-10 sm:p-10 lg:grid-cols-[260px_1fr_minmax(0,320px)]">
-            <div className="mx-auto w-48 sm:mx-0 sm:w-full">
+          <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+            <span>Where it started</span>
+            <span className="h-px flex-1 bg-border" aria-hidden />
+            <span className="text-foreground">Publishing since {sqlBook.year}</span>
+          </div>
+
+          <div className="mt-10 grid items-center gap-10 md:grid-cols-[minmax(0,360px)_1fr] lg:grid-cols-[minmax(0,440px)_1fr] lg:gap-16">
+            {/* Cover panel */}
+            <div className="relative flex items-center justify-center overflow-hidden rounded-xl border border-border bg-subtle px-8 py-10 lg:py-12">
+              <span
+                className="pointer-events-none absolute -bottom-6 -right-2 select-none text-[7rem] font-extrabold leading-none tracking-tighter text-foreground/[0.05] sm:text-[9rem]"
+                aria-hidden
+              >
+                {sqlBook.year}
+              </span>
+              <div
+                className="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow/20 blur-3xl"
+                aria-hidden
+              />
               <Image
                 src="/images/sqlbook.jpg"
                 alt={`${sqlBook.title} book cover by Hafizur Rahman`}
                 width={298}
                 height={385}
-                className="h-auto w-full rounded-r-md rounded-l-sm shadow-2xl"
-                sizes="(max-width: 640px) 192px, 260px"
+                className="relative h-auto w-56 rounded-r-md rounded-l-sm shadow-[0_24px_48px_-16px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1 sm:w-64 lg:w-72"
+                sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 288px"
               />
             </div>
 
+            {/* Details */}
             <div>
-              <p className="inline-block rounded-sm border border-border px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-muted">
-                First book · {sqlBook.year}
+              <p className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs font-semibold text-muted">
+                <span className="h-1.5 w-1.5 rounded-full bg-yellow" aria-hidden />
+                First book · Independently published {sqlBook.year}
               </p>
               <h2
                 id="sql-heading"
-                className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl"
+                className="mt-5 text-2xl font-bold tracking-tight sm:text-3xl"
               >
                 {sqlBook.title}
               </h2>
-              <p className="mt-2 text-sm font-medium leading-snug text-foreground/70">
+              <p className="mt-2 max-w-2xl text-sm font-medium leading-snug text-foreground/70 sm:text-base">
                 {sqlBook.subtitle}
               </p>
-              <p className="mt-5 text-base leading-relaxed text-muted">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
                 Hafiz Rahman&apos;s first book, independently published in{" "}
                 {sqlBook.year}, is a practical introduction to SQL and
                 relational database design.
               </p>
-              <div className="mt-6">
-                <Button href={sqlBook.url} variant="secondary" external>
-                  Explore the Book
-                </Button>
-              </div>
-            </div>
 
-            <div className="sm:col-span-2 lg:col-span-1 lg:border-l lg:border-border lg:pl-10">
-              <ul className="space-y-4">
+              <ul className="mt-7 max-w-2xl divide-y divide-border border-y border-border">
                 {sqlBook.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="flex gap-3 text-[0.95rem] leading-relaxed"
+                    className="flex items-start gap-3.5 py-3.5 text-[0.95rem] leading-relaxed"
                   >
                     <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-yellow"
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-yellow text-black"
                       aria-hidden
-                    />
+                    >
+                      <svg viewBox="0 0 12 12" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M2.5 6.5l2.2 2.2L9.5 3.8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
                     <span>{highlight}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-8 border-t border-border pt-5 text-sm font-medium text-foreground">
-                Publishing since {sqlBook.year}.
-              </p>
+
+              <div className="mt-8">
+                <Button href={sqlBook.url} variant="secondary" external>
+                  Explore the Book →
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -379,41 +426,57 @@ export default function HomePage() {
       {/* 6 — About Hafiz */}
       <section
         id="about"
-        className="scroll-mt-16 border-t border-border bg-subtle"
+        className="relative scroll-mt-16 overflow-hidden border-t border-border bg-subtle"
         aria-labelledby="about-heading"
       >
-        <div className="container mx-auto px-4 py-16 sm:px-8 sm:py-20">
-          <div className="max-w-3xl">
+        <span
+          className="pointer-events-none absolute left-0 top-0 h-full w-1 bg-yellow"
+          aria-hidden
+        />
+        <div className="container mx-auto grid gap-8 px-4 py-16 sm:px-8 sm:py-20 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted">
+              <span className="h-0.5 w-8 bg-yellow" aria-hidden />
+              About
+            </p>
             <h2
               id="about-heading"
-              className="text-3xl font-bold tracking-tight sm:text-4xl"
+              className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
             >
               About Hafiz
             </h2>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted sm:text-lg">
-              <p>
-                Hafiz Rahman is an author, technology executive and
-                entrepreneur with 28+ years of experience across engineering,
-                data, AI and organizational transformation.
+          </div>
+
+          <div className="lg:col-span-8">
+            <p className="text-xl font-semibold leading-snug tracking-tight text-foreground sm:text-2xl">
+              Hafiz Rahman is an author, technology executive and entrepreneur
+              with 28+ years of experience across engineering, data, AI and
+              organizational transformation.
+            </p>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+              His work has evolved from building technology systems to
+              understanding the systems behind organizational and human
+              decisions.
+            </p>
+            {flags.devizurAnnounced && (
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+                He is also Co-Founder and CEO of Devizur, an AI-first
+                technology company building end-to-end solutions for
+                hospitality and entertainment businesses and developing
+                AI-ready, data-driven decision capabilities.
               </p>
-              <p>
-                His work has evolved from building technology systems to
-                understanding the systems behind organizational and human
-                decisions.
-              </p>
-              {flags.devizurAnnounced && (
-                <p>
-                  He is also Co-Founder and CEO of Devizur, an AI-first
-                  technology company building end-to-end solutions for
-                  hospitality and entertainment businesses and developing
-                  AI-ready, data-driven decision capabilities.
-                </p>
-              )}
-            </div>
-            <div className="mt-8">
+            )}
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-border pt-8">
               <Button href="/about" variant="dark">
                 Read Hafiz&apos;s Story →
               </Button>
+              <a
+                href="/contact"
+                className="text-sm font-semibold text-foreground underline decoration-yellow decoration-2 underline-offset-4 transition-colors hover:decoration-foreground"
+              >
+                Get in touch
+              </a>
             </div>
           </div>
         </div>
