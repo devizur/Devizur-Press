@@ -327,11 +327,11 @@ export default function HomePage() {
 
               {/* Diagnose-upward rail */}
               <div className="flex w-6 flex-col items-center" aria-hidden>
-                <svg viewBox="0 0 12 8" className="h-2.5 w-3 text-yellow" fill="currentColor">
-                  <path d="M6 0l6 8H0z" />
+                <svg viewBox="0 0 12 9" className="h-3 w-4 text-yellow" fill="currentColor">
+                  <path d="M6 0l6 9H0z" />
                 </svg>
-                <span className="w-px flex-1 bg-gradient-to-t from-yellow to-yellow/0" />
-                <span className="h-3 w-3 rounded-full bg-yellow ring-4 ring-yellow/25" />
+                <span className="-mt-px w-0.5 flex-1 bg-gradient-to-t from-yellow via-yellow/80 to-yellow/40" />
+                <span className="-mt-0.5 h-3.5 w-3.5 rounded-full bg-yellow ring-4 ring-yellow/25" />
               </div>
             </div>
 
