@@ -15,6 +15,46 @@ export const siteConfig = {
   sampleChapter:
     "https://www.amazon.com/dp/B0H9NLJ667?asin=B0H9NLJ667&revisionId=cecc7ac9&format=3&depth=1",
   linkedIn: "https://www.linkedin.com/in/hafizengineering",
+  // Launch gates — flip only when the thing is actually live.
+  flags: {
+    // Show "Get the Free Tools" CTA for Full Stack Life once resources exist.
+    fullStackLifeFreeTools: false,
+    // Show the Devizur statement only after the official public announcement.
+    devizurAnnounced: false,
+  },
+  author: {
+    name: "Hafiz Rahman",
+    roles: ["Author", "Technology Executive", "Entrepreneur"],
+    positioning:
+      "Systems thinking for better decisions, better organizations, and better lives.",
+    location: "Melbourne, Australia",
+    expertise: [
+      "Engineering",
+      "Data",
+      "AI",
+      "Organizational Transformation",
+      "Systems Thinking",
+    ],
+  },
+  fullStackLife: {
+    title: "Full Stack Life",
+    subtitle: "How to Find the Real Problem Before You Fix the Wrong One",
+    freeToolsUrl: "",
+  },
+  sqlBook: {
+    title: "Solving Business Problems Using SQL",
+    subtitle:
+      "A Definitive Guide for Beginners Who Want to Be Proficient in Database Design and Writing SQL",
+    year: 2019,
+    highlights: [
+      "Learn SQL by solving real-world business problems, not just memorising syntax",
+      "Build a complete relational database from scratch, step by step",
+      "Written for beginners, analysts, developers, and anyone working with data",
+    ],
+    url: "https://www.amazon.com/dp/1795478292",
+  },
+  // Endorsements featured on the homepage (reviewer names from socialProof).
+  featuredEndorsements: ["Umut Omer", "A. Y. M. Mostafa", "Gopal Das"],
   socialProof: [
     {
       quote:

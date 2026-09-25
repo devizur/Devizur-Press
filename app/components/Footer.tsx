@@ -31,22 +31,37 @@ export function Footer() {
 
         <div className="flex flex-wrap gap-12 text-sm">
           <div>
-            <p className="mb-3 font-semibold tracking-wide text-black dark:text-yellow">Book</p>
+            <p className="mb-3 font-semibold tracking-wide text-black dark:text-yellow">Books</p>
             <ul className="space-y-2 text-muted">
               <li>
-                <Link href="/#about" className="hover:text-foreground">
+                <Link href="/#full-stack-life" className="hover:text-foreground">
+                  {siteConfig.fullStackLife.title}
+                </Link>
+              </li>
+              <li>
+                <Link href="/decision-system" className="hover:text-foreground">
                   {siteConfig.book.title}
                 </Link>
               </li>
               <li>
                 <a
-                  href={siteConfig.amazon.ebook}
+                  href={siteConfig.sqlBook.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground"
                 >
-                  Buy on Amazon
+                  {siteConfig.sqlBook.title}
                 </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="mb-3 font-semibold tracking-wide text-black dark:text-yellow">Author</p>
+            <ul className="space-y-2 text-muted">
+              <li>
+                <Link href="/about" className="hover:text-foreground">
+                  About Hafiz
+                </Link>
               </li>
             </ul>
           </div>

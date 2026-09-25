@@ -17,14 +17,16 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.book.title} | ${siteConfig.name}`,
-    template: `%s | ${siteConfig.name}`,
+    default: `${siteConfig.author.name} | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.author.name}`,
   },
   description:
-    "Decision System is a practical field guide for leaders who want to turn scattered, contested data into decisions that create measurable business outcomes. From Devizur Press.",
+    "Hafiz Rahman writes about systems thinking for better decisions, better organizations, and better lives. Author of Full Stack Life, Decision System, and Solving Business Problems Using SQL.",
   keywords: [
-    "Decision System",
     "Hafiz Rahman",
+    "Full Stack Life",
+    "Decision System",
+    "systems thinking",
     "Devizur Press",
     "data-driven decisions",
     "executive leadership",
@@ -39,24 +41,22 @@ export const metadata: Metadata = {
     locale: "en_AU",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.book.title} | ${siteConfig.name}`,
-    description:
-      "How companies turn trusted data into decisions that change outcomes. A practical field guide for executives and data leaders.",
+    title: `${siteConfig.author.name} | ${siteConfig.name}`,
+    description: siteConfig.author.positioning,
     images: [
       {
-        url: "/images/book-3d.png",
-        width: 1200,
-        height: 630,
-        alt: "Decision System book by Hafiz Rahman",
+        url: "/images/author.png",
+        width: 680,
+        height: 850,
+        alt: "Hafiz Rahman",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.book.title} | ${siteConfig.name}`,
-    description:
-      "How companies turn trusted data into decisions that change outcomes.",
-    images: ["/images/book-3d.png"],
+    title: `${siteConfig.author.name} | ${siteConfig.name}`,
+    description: siteConfig.author.positioning,
+    images: ["/images/author.png"],
   },
   robots: {
     index: true,

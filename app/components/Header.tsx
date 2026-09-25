@@ -2,17 +2,37 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { siteConfig } from "../lib/site";
-import { Button } from "./Button";
 import { ThemeToggle } from "./ThemeToggle";
 
-const navLinks = [
+type NavLink = {
+  href: string;
+  label: string;
+  // Extra paths that should highlight this link (e.g. anchor links).
+  match?: string[];
+};
+
+const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
+  { href: "/books", label: "Books", match: ["/decision-system"] },
+  { href: "/about", label: "About" },
+  { href: "/ideas", label: "Ideas" },
+  { href: "/resources", label: "Resources" },
+  { href: "/media", label: "Media" },
   { href: "/contact", label: "Contact" },
 ];
 
+function isActive(link: NavLink, pathname: string) {
+  const base = link.href.split("#")[0] || "/";
+  if (link.href.includes("#")) {
+    return link.match?.some((p) => pathname.startsWith(p)) ?? false;
+  }
+  return base === "/" ? pathname === "/" : pathname.startsWith(base);
+}
+
 export function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -65,30 +85,30 @@ export function Header() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <nav className="flex items-center gap-8" aria-label="Primary">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button
-              href={siteConfig.amazon.ebook}
-              variant="primary"
-              className="!px-5 !py-2.5"
-              external
-            >
-              Buy on Amazon
-            </Button>
+        <div className="hidden items-center gap-3 lg:flex">
+          <nav className="flex items-center gap-1" aria-label="Primary">
+            {navLinks.map((link) => {
+              const active = isActive(link, pathname);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${
+                    active
+                      ? "bg-yellow font-semibold text-black"
+                      : "text-foreground/70 hover:bg-subtle hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
           <ThemeToggle />
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <button
             type="button"
@@ -117,27 +137,27 @@ export function Header() {
       {open && (
         <div
           id="mobile-nav"
-          className="border-t border-border bg-background px-5 py-6 md:hidden"
+          className="border-t border-border bg-background px-5 py-6 lg:hidden"
         >
-          <nav className="flex flex-col gap-4" aria-label="Mobile">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-base font-medium"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button
-              href={siteConfig.amazon.ebook}
-              variant="primary"
-              className="mt-2 w-full"
-              external
-            >
-              Buy on Amazon
-            </Button>
+          <nav className="flex flex-col gap-1" aria-label="Mobile">
+            {navLinks.map((link) => {
+              const active = isActive(link, pathname);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-md px-4 py-2.5 text-base font-medium transition-colors ${
+                    active
+                      ? "bg-yellow font-semibold text-black"
+                      : "hover:bg-subtle"
+                  }`}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       )}
